@@ -12,6 +12,7 @@ class Lab01_Variant24_QuadraticEquation
         {
             try
             {
+                //Задача 1, 2, 3
                 Console.WriteLine("ОПЕРАЦИИ:\n" +
                 "1. Расчёт дискриминанта.\n" +
                 "2. Определение количества корней.\n" +
