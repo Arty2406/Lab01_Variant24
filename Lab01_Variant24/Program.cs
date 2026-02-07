@@ -40,6 +40,7 @@ class Lab01_Variant24_QuadraticEquation
                         break;
                 }
             }
+            //обработка ошибок
             catch (FormatException)
             {
                 Console.WriteLine("Введите нужный формат числа!\n" +
