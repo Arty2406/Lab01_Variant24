@@ -3,34 +3,42 @@ using System;
 
 class Lab01_Variant24_QuadraticEquation
 {
-    public double D { get; set; }
-
     static void Main(string[] args) //главное меню
     {
+        double D = 0;
+        double a = 0;
+        double b = 0;
+        double c = 0;
         string num = "";
         do
         {
             try
             {
-                //Задача 1, 2, 3
+                
                 Console.WriteLine("ОПЕРАЦИИ:\n" +
                 "1. Расчёт дискриминанта.\n" +
                 "2. Определение количества корней.\n" +
                 "3. Сумма и произведение корней по теореме Виета.\n" +
                 "4. Выход из программы.\n" +
-                "Введите номер операции (1 .. 12): ");
+                "Введите номер операции (1 .. 4): ");
 
                 num = Console.ReadLine();
                 switch (num)
                 {
                     case "1":
-                        double D = discriminant();
+                        D = discriminant();
                         break;
                     case "2":
                         definition(D);
                         break;
                     case "3":
-                        double a, b, c = theorem(a, b, c);
+                        Console.Write("a = ");
+                        a = double.Parse(Console.ReadLine());
+                        Console.Write("b = ");
+                        b = double.Parse(Console.ReadLine());
+                        Console.Write("c = ");
+                        c = double.Parse(Console.ReadLine());
+                        theorem(a, b, c);
                         break;
                     case "4":
                         Console.WriteLine("Выход из программы.");
@@ -70,8 +78,7 @@ class Lab01_Variant24_QuadraticEquation
         double D = b * b - 4 * a * c;
         Console.WriteLine("1. Дискриминант:\n" +
                           $"D = {D:F2}");
-
-        return D;
+            return D;
     }
     static void definition(double D)
     {
@@ -81,8 +88,9 @@ class Lab01_Variant24_QuadraticEquation
                           $"При D = 0: один корень (ваш D = {D:F2})\n" +
                           $"При D < 0: нет корней (ваш D = {D:F2})");
     }
-    static void theorem(double b, double a, double c)
+    static void theorem(double a, double b, double c)
     {
+
         // Задача 3: сумма и произведение корней по теореме Виета (с учётом двух знаков после запятой)
         double sum = -b / a;      // x1 + x2 = -b/a
         double product = c / a;   // x1 × x2 = c/a
